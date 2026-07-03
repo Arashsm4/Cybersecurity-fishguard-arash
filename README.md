@@ -1,11 +1,13 @@
-# PhishGuard
+# FishGuard
 
-PhishGuard is a B207 Cyber Security coursework project. It detects phishing-style emails using
+FishGuard is a B207 Cyber Security coursework project. It detects phishing-style emails using
 Python, TF-IDF text vectorization, Logistic Regression, and SQLite database storage.
 
 The project includes both a command-line interface and a small local browser interface. The CLI is the
 main required application. The browser interface is included as an optional demo layer to show how a
 backend can return analysis results to a user.
+
+Let me know if any place was not making sense or there was any issues with the system
 
 ## Features
 
