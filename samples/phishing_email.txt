@@ -1,0 +1,7 @@
+URGENT SECURITY ALERT
+
+Your online banking account has been suspended because of suspicious login activity.
+Confirm your username, password, and card number immediately at:
+http://bank-update.example.com
+
+If you do not verify your account now, your access will be permanently blocked.

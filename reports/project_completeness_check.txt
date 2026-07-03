@@ -1,0 +1,154 @@
+STDOUT:
+Dataset verification passed.
+label
+phishing      125
+legitimate    125
+Name: count, dtype: int64
+$ /opt/pyvenv/bin/python setup_project.py
+Database initialized at: /mnt/data/phishguard-arash-final/phishguard.db
+Model trained successfully.
+Accuracy:  1.0000
+Precision: 1.0000
+Recall:    1.0000
+F1-score:  1.0000
+Model saved to: /mnt/data/phishguard-arash-final/models/phishing_model.joblib
+Evaluation report saved to: /mnt/data/phishguard-arash-final/reports/evaluation_report.txt
+Setting up PhishGuard...
+Project root: /mnt/data/phishguard-arash-final
+
+$ /opt/pyvenv/bin/python src/app.py init-db
+
+$ /opt/pyvenv/bin/python src/app.py train
+
+Setup complete.
+
+CLI examples:
+python src/app.py analyze --text "Your account has been suspended. Verify your password now."
+python src/app.py analyze-file samples/phishing_email.txt
+python src/app.py analyze-file samples/legitimate_email.txt
+python src/app.py history
+python src/app.py report
+
+Optional browser interface:
+python src/web_app.py
+Then open: http://127.0.0.1:8000
+
+$ /opt/pyvenv/bin/python src/app.py clear-history
+Analysis history cleared.
+
+$ /opt/pyvenv/bin/python src/app.py analyze-file samples/phishing_email.txt
+
+PhishGuard Analysis Result
+================================================================================
+Prediction: PHISHING
+Confidence: 83.95%
+Database ID: 1
+Suspicious keywords: account, bank, blocked, card, card number, confirm, immediately, login, now, password, security alert, suspended, urgent, username, verify
+
+Extracted security indicators:
+  - number_of_links: 1
+  - number_of_emails: 0
+  - urgent_word_count: 8
+  - credential_word_count: 6
+  - money_word_count: 2
+  - exclamation_count: 0
+  - uppercase_word_count: 3
+
+Recommendation:
+Treat this email as suspicious. Do not click links, open attachments,
+or provide credentials until the sender and domain are verified.
+
+$ /opt/pyvenv/bin/python src/app.py analyze-file samples/legitimate_email.txt
+
+PhishGuard Analysis Result
+================================================================================
+Prediction: LEGITIMATE
+Confidence: 81.09%
+Database ID: 2
+Suspicious keywords: None
+
+Extracted security indicators:
+  - number_of_links: 0
+  - number_of_emails: 0
+  - urgent_word_count: 0
+  - credential_word_count: 0
+  - money_word_count: 0
+  - exclamation_count: 0
+  - uppercase_word_count: 0
+
+Recommendation:
+The email looks legitimate according to the current model.
+Still verify any message that asks for sensitive action.
+
+$ /opt/pyvenv/bin/python src/app.py history
+
+Latest Analysis Results
+================================================================================
+ID: 2
+Time: 2026-07-02 20:31:07
+Prediction: legitimate | Confidence: 81.09%
+Suspicious keywords: None
+Email: Hello team,  Please find attached the meeting notes from today's project discussion. Th...
+--------------------------------------------------------------------------------
+ID: 1
+Time: 2026-07-02 20:31:04
+Prediction: phishing | Confidence: 83.95%
+Suspicious keywords: account, bank, blocked, card, card number, confirm, immediately, login, now, password, security alert, suspended, urgent, username, verify
+Email: URGENT SECURITY ALERT  Your online banking account has been suspended because of suspic...
+--------------------------------------------------------------------------------
+
+$ /opt/pyvenv/bin/python src/app.py report
+
+PhishGuard Summary
+================================================================================
+Total scanned emails:        2
+Phishing predictions:        1
+Legitimate predictions:      1
+Average confidence:          82.52%
+
+Saved Model Evaluation
+================================================================================
+PhishGuard - Model Evaluation Report
+================================================
+Dataset: /mnt/data/phishguard-arash-final/data/emails.csv
+Total samples: 250
+Training samples: 187
+Testing samples: 63
+
+Accuracy:  1.0000
+Precision: 1.0000
+Recall:    1.0000
+F1-score:  1.0000
+
+Confusion Matrix
+Rows = real labels, columns = predicted labels
+Label order: legitimate, phishing
+[[32  0]
+ [ 0 31]]
+
+Classification Report
+              precision    recall  f1-score   support
+
+  legitimate       1.00      1.00      1.00        32
+    phishing       1.00      1.00      1.00        31
+
+    accuracy                           1.00        63
+   macro avg       1.00      1.00      1.00        63
+weighted avg       1.00      1.00      1.00        63
+
+
+Dataset Check
+label
+phishing      125
+legitimate    125
+Name: count, dtype: int64
+
+Important Note
+This is a coursework prototype. A real phishing detector would need a larger real-world dataset, email headers, URL reputation checks, attachment scanning, and continuous testing.
+
+Web function verification passed.
+Project verification passed.
+
+STDERR:
+
+Return code: 0

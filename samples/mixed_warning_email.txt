@@ -1,0 +1,6 @@
+Dear customer,
+
+Your password was changed successfully. If this was not you, please contact official support
+through the mobile banking app or the official website.
+
+No password, PIN, or card number is required by email.

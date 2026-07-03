@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PhishGuard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <p class="eyebrow">B207 Cyber Security Project</p>
+            <h1>PhishGuard</h1>
+            <p class="subtitle">
+                A small phishing email detector using Python, TF-IDF, Logistic Regression, and SQLite.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Analyze Email</h2>
+            <p class="hint">Paste an email below. The backend analyzes it and saves the result.</p>
+
+            <textarea id="emailText" rows="9" spellcheck="false">URGENT SECURITY ALERT
+
+Your online banking account has been suspended because of suspicious login activity.
+Confirm your username, password, and card number immediately at:
+http://bank-update.example.com
+
+If you do not verify your account now, your access will be permanently blocked.</textarea>
+
+            <div class="actions">
+                <button id="analyzeBtn">Analyze</button>
+                <button id="samplePhishingBtn" class="secondary">Load phishing sample</button>
+                <button id="sampleLegitBtn" class="secondary">Load normal sample</button>
+            </div>
+
+            <div id="resultBox" class="result hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h2>History</h2>
+                <button id="refreshHistoryBtn" class="secondary">Refresh history</button>
+                <div id="historyBox" class="history"></div>
+            </div>
+
+            <div class="card">
+                <h2>Report</h2>
+                <button id="refreshReportBtn" class="secondary">Refresh report</button>
+                <pre id="reportBox" class="report"></pre>
+            </div>
+        </section>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>

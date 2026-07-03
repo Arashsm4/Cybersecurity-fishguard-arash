@@ -1,0 +1,37 @@
+PhishGuard - Model Evaluation Report
+================================================
+Dataset: D:\Code\CyberSecurity\phishguard-arash-final\data\emails.csv
+Total samples: 250
+Training samples: 187
+Testing samples: 63
+
+Accuracy:  1.0000
+Precision: 1.0000
+Recall:    1.0000
+F1-score:  1.0000
+
+Confusion Matrix
+Rows = real labels, columns = predicted labels
+Label order: legitimate, phishing
+[[32  0]
+ [ 0 31]]
+
+Classification Report
+              precision    recall  f1-score   support
+
+  legitimate       1.00      1.00      1.00        32
+    phishing       1.00      1.00      1.00        31
+
+    accuracy                           1.00        63
+   macro avg       1.00      1.00      1.00        63
+weighted avg       1.00      1.00      1.00        63
+
+
+Dataset Check
+label
+phishing      125
+legitimate    125
+Name: count, dtype: int64
+
+Important Note
+This is a coursework prototype. A real phishing detector would need a larger real-world dataset, email headers, URL reputation checks, attachment scanning, and continuous testing.

@@ -1,0 +1,17 @@
+{
+  "dataset_rows": 250,
+  "label_counts": {
+    "phishing": 125,
+    "legitimate": 125
+  },
+  "duplicate_rows": 0,
+  "missing_values_total": 0,
+  "compile_return_code": 0,
+  "source_marker_findings": [],
+  "has_model": true,
+  "has_database": true,
+  "has_web_ui": true,
+  "has_web_backend": true,
+  "has_evaluation_report": true,
+  "has_completeness_log": true
+}
